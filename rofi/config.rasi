@@ -1,0 +1,41 @@
+configuration {
+    modi: "drun,run";
+    font: "Roboto 18";
+    show-icons: false;
+    drun-display-format: "{name}"; /* Убираем описание */
+    display-drun: ":";             /* Вместо иконки/поиска */
+    display-run: ":";
+
+}
+
+@import "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
+window {
+    width: 20%;
+    location: center;
+    anchor:   center;
+    border: 2px;
+    border-color: @separatorcolor;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding: 10px;
+}
+
+prompt {
+    font: "Roboto 18";
+}
+
+entry {
+    placeholder: "";
+}
+
+listview {
+    lines: 6;
+    scrollbar: false;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

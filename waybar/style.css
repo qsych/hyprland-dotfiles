@@ -1,0 +1,124 @@
+@define-color bg #282828;
+@define-color fg #ebdbb2;
+@define-color red #cc241d;
+@define-color orange #d65d0e;
+@define-color yellow #d79921;
+@define-color green #98971a;
+@define-color aqua #689d6a;
+@define-color blue #458588;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#workspaces {
+    background-color: rgba(40, 40, 40, 0.9);
+    padding: 0px 8px;
+    border-radius: 4px;
+}
+
+#workspaces button {
+    color: rgba(235, 219, 178, 0.3);
+    padding: 0 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @orange;
+    font-size: 15px;
+}
+
+#workspaces button.visible {
+    color: @fg;
+}
+
+#workspaces button.urgent {
+    color: @red;
+}
+
+#workspaces button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+}
+
+#clock.time,
+#clock.date,
+#pulseaudio,
+#network,
+#battery,
+#backlight,
+#language,
+#tray {
+    background-color: rgba(40, 40, 40, 0.9);
+    color: @fg;
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+#language {
+    color: @aqua;
+}
+
+#backlight {
+    color: rgba(155, 155, 155, 0.8);
+}
+
+#clock.time {
+    color: @yellow;
+}
+
+#clock.date {
+    color: @yellow;
+}
+
+#workspaces button {
+    color: rgba(235, 219, 178, 0.4);
+    padding: 0 4px;
+}
+
+#workspaces button.active {
+    color: @orange;
+}
+
+#battery {
+    color: @aqua;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @orange;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @fg;
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(40, 40, 40, 0.9);
+        color: @red;
+    }
+}
+
+#pulseaudio {
+    color: @blue;
+}
