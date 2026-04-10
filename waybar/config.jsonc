@@ -8,7 +8,21 @@
 
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock#time"],
-  "modules-right": ["backlight", "pulseaudio", "battery", "clock#date", "tray"],
+  "modules-right": [
+    "hyprland/language",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "clock#date",
+    "tray",
+  ],
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ru": "RU",
+    "format-uk": "UA",
+  },
 
   "hyprland/workspaces": {
     "disable-scroll": true,
