@@ -1,0 +1,25 @@
+return {
+  windowrule = {
+    {
+      name = "suppress-maximize-events",
+      ["match:class"] = ".*",
+      suppress_event = "maximize",
+    },
+    {
+      name = "fix-xwayland-drags",
+      ["match:class"] = "^$",
+      ["match:title"] = "^$",
+      ["match:xwayland"] = true,
+      ["match:float"] = true,
+      ["match:fullscreen"] = false,
+      ["match:pin"] = false,
+      no_focus = true,
+    },
+    {
+      name = "move-hyprland-run",
+      ["match:class"] = "hyprland-run",
+      move = "20 monitor_h-120",
+      float = true,
+    },
+  },
+}
