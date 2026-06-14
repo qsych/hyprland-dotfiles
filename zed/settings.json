@@ -7,20 +7,30 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
   "agent": {
-    "default_profile": "write",
-    "dock": "right",
+    "sidebar_side": "right",
+    "default_profile": "ask",
+    "dock": "left",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gemini-3.1-pro-preview",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
       "enable_thinking": true,
-      "effort": "high"
+      "effort": "minimal",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "vim_mode": false,
   "icon_theme": "Zed (Default)",
