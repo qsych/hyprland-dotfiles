@@ -1,18 +1,15 @@
-
 hl.config({
     input = {
-        kb_layout  = "us",
+        kb_layout = "us,ru",
         kb_variant = "",
-        kb_model   = "",
-        kb_options = "",
-        kb_rules   = "",
+        kb_options = "grp:caps_toggle",
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0,
 
         touchpad = {
-            natural_scroll = false,
+            natural_scroll = true,
         },
     },
 })
