@@ -7,18 +7,25 @@ hl.bind(mainMod .. "+ SHIFT + Q", hl.dsp.window.close() )
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm"))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("walker -d"))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("rofi -show drun"))
+-- hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("rofi -show window"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser"))
 
 hl.bind(mainMod .. " + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + CTRL + Space", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + CTRL + Space", hl.dsp.layout("togglesplit")) -- dwindle only
 
--- FOCUS
+-- Focus
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+
+-- Move
+hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 
 -- workspace focus
 for i = 1, 10 do
@@ -28,8 +35,8 @@ for i = 1, 10 do
 end
 
 -- Special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + ALT + Tab", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind(mainMod .. " + ALT + Tab", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "e+0" }))
 
 -- Move/resize
@@ -48,3 +55,22 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind(mainMod .. " + CTRL + bracketleft",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind(mainMod .. " + CTRL + bracketright",  hl.dsp.exec_cmd("playerctl previous"),       { locked = true })
+
+-- Screnshots
+local screen_path = "~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
+hl.bind("Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast --freeze copysave area " .. screen_path))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast copysave screen " .. screen_path))
+hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd("satty --filename $(ls -t ~/Pictures/Screenshots/*.png | head -n1)"))
+
+-- Color Picker
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
+
+-- Fullscreen
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized"}))
+
+-- Clipboard history
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"))
+
+-- Hyprlock
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))

@@ -1,3 +1,8 @@
+hl.workspace_rule({
+    workspace = "special:scratchpad",
+    gaps_in = 10,
+    gaps_out = 60,
+})
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
