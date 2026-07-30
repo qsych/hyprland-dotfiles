@@ -1,0 +1,86 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Alexays/Waybar/master/resources/schemas/config.json",
+
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin-left": 14,
+    "margin-right": 14,
+    "margin-top": 6,
+    "margin-bottom": 0,
+    "exclusive": true,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+
+    "modules-left":   ["clock", "bluetooth", "pulseaudio", "pulseaudio#microphone"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right":  ["network", "tray", "cpu", "memory", "clock#date"],
+
+    /* ── слева ── */
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+    "bluetooth": {
+        "format-off":      "󰂲",
+        "format-disabled": "󰂲",
+        "format":          "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "on-click": "bash -c \"bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on\""
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset":   "󰋎",
+            "default":   ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-middle": "pavucontrol"
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source":       "<span foreground='#c5c9c5'>󰍬</span>",
+        "format-source-muted": "<span foreground='#c4746e'>󰍭</span>",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "tooltip": false
+    },
+
+    /* ── центр ── */
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    /* ── справа ── */
+    "network": {
+        "interval": 5,
+        "format-wifi":         "<span font='17px'>󰤨</span> {essid}",
+        "format-ethernet":     "<span font='17px'>󰈀</span>",
+        "format-disconnected": "<span font='17px'>󰖪</span>",
+        "format-disabled":     "<span font='17px'>󰀞</span>",
+        "tooltip-format-wifi": "{essid} · {signalStrength}%",
+        "on-click": "vicinae deeplink vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/manage-saved-networks"
+    },
+    "tray": { "icon-size": 14, "spacing": 8 },
+
+    "cpu": {
+        "interval": 5,
+        "format": "<span font='17px'>󰍛</span> {usage}%",
+        "states": { "warning": 70, "critical": 90 },
+        "tooltip-format": "cpu · {usage}% · load {load}"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "<span font='17px'></span> {used:0.1f}G",
+        "states": { "warning": 75, "critical": 90 }
+    },
+    "clock#date": {
+        "format": "{:%a %d}",
+        "tooltip-format": "{:%B %Y}"
+    }
+}

@@ -15,6 +15,11 @@
          "enabled": false
       }
    },
+   "favorites": [
+      "@Gelei/store.vicinae.bluetooth:devices",
+      "@dagimg-dot/store.vicinae.wifi-commander:manage-saved-networks",
+      "clipboard:history"
+   ],
    "providers": {
       "@dagimg-dot/store.vicinae.wifi-commander": {
          "preferences": {

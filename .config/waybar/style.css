@@ -1,0 +1,168 @@
+@define-color bg0   #0d0c0c;
+@define-color bg1   #12120f;
+@define-color bg2   #181616;
+@define-color line  #282727;
+@define-color fg    #c5c9c5;
+@define-color bright #e6e6e6;  /* для активных элементов */
+@define-color dim   #625e5a;
+
+@define-color green #8a9a7b;
+@define-color ash   #8ea6a3;
+@define-color amber #c4b28a;
+@define-color red   #c4746e;
+@define-color red2  #9d5a54;
+@define-color ink   #12120f;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+window#waybar { background: transparent; }
+
+/* ── 3 плашки ───────────────────────────────────────── */
+.modules-left,
+.modules-right {
+    background: @bg1;
+    border-radius: 6px;
+    padding: 0 8px;
+    margin: 0 8px;
+}
+
+.modules-center {
+    background: @bg2;
+    border-radius: 6px;
+    padding: 0 6px;
+    margin: 0 4px;
+}
+
+/* ── модули внутри ──────────────────────────────────── */
+#clock, #date, #tray, #bluetooth, #network,
+#pulseaudio, #microphone, #cpu, #memory {
+    margin: 4px 3px;
+    padding: 0 8px;
+    border-radius: 6px;
+    transition: background-color .25s, color .25s;
+}
+
+#bluetooth:hover, #network:hover, #pulseaudio:hover,
+#microphone:hover, #cpu:hover, #memory:hover {
+    background: @bg0;
+}
+
+/* ── воркспейсы ─────────────────────────────────────── */
+#workspaces { padding: 0 2px; }
+
+#workspaces button {
+    min-width: 18px;
+    min-height: 18px;
+    margin: 4px 2px;
+    padding: 0;
+    color: @dim;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 4px;
+    transition: min-width .35s cubic-bezier(.4, 0, .2, 1),
+                background-color .25s, color .25s;
+}
+
+#workspaces button:hover { background: @line; color: @fg; }
+
+#workspaces button.active,
+#workspaces button.focused {
+    min-width: 27px;
+    min-height: 18px;
+    background: @fg;
+    color: @bg0;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+#workspaces button.urgent { background: @red; color: @ink; }
+
+/* ── часы и дата (сделаны ярче) ─────────────────────── */
+#clock {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: @bright;      /* ярче основного текста */
+}
+
+#clock.date {
+    letter-spacing: .16em;
+}
+
+/* ── трей ───────────────────────────────────────────── */
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* ── bluetooth ──────────────────────────────────────── */
+#bluetooth { color: @dim; }
+#bluetooth.on { color: @fg; }
+#bluetooth.connected {
+    background: @green;
+    color: @ink;
+    font-weight: 700;
+}
+#bluetooth.connected:hover { background: #97a888; }
+
+/* ── wifi ───────────────────────────────────────────── */
+#network {
+    color: @dim;
+}
+
+#network.wifi, #network.ethernet, #network.linked {
+    background: @ash; color: @ink; font-weight: 700;
+}
+#network.wifi:hover { background: #9cb3b0; }
+#network.disconnected {
+    background: @amber; color: @ink; font-weight: 700;
+}
+#network.disconnected:hover { background: #d0bd99; }
+#network.disabled {
+    background: @red;
+    color: @ink;
+    font-weight: 700;
+    animation: alert 2.2s ease-in-out infinite;
+}
+
+@keyframes alert {
+    from { background-color: @red; }
+    50%  { background-color: @red2; }
+    to   { background-color: @red; }
+}
+
+/* ── звук и микрофон ────────────────────────────────── */
+#pulseaudio { color: @fg; }
+#pulseaudio.muted { color: @red; }
+
+/* ── метрики (ярче при наводке) ─────────────────────── */
+#cpu, #memory {
+    color: @dim;
+    transition: color .25s;
+}
+
+#cpu:hover, #memory:hover {
+    color: @bright;    /* почти белые при наведении */
+}
+
+#cpu.warning,  #memory.warning  { color: @amber; }
+#cpu.critical, #memory.critical { color: @red; }
+
+/* ── тултипы ────────────────────────────────────────── */
+tooltip {
+    background: @bg2;
+    border: 1px solid @line;
+    border-radius: 6px;
+}
+tooltip label {
+    margin: 7px 11px;
+    font-size: 11px;
+    color: @fg;
+}
