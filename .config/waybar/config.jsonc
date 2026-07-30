@@ -16,7 +16,6 @@
     "modules-center": ["hyprland/workspaces"],
     "modules-right":  ["network", "tray", "cpu", "memory", "clock#date"],
 
-    /* ── слева ── */
     "clock": {
         "format": "{:%H:%M}",
         "tooltip-format": "{:%A, %d %B %Y}"
@@ -25,38 +24,30 @@
         "format-off":      "󰂲",
         "format-disabled": "󰂲",
         "format":          "󰂯",
-        "format-connected": "󰂱 {device_alias}",
-        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
-        "on-click": "bash -c \"bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on\""
+        "format-connected": "{device_alias}",
+        "format-connected-battery": "{device_alias} {device_battery_percentage}%",
+        "on-click": "vicinae deeplink vicinae://launch/@Gelei/store.vicinae.bluetooth/devices"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "headset":   "󰋎",
-            "default":   ["󰕿", "󰖀", "󰕾"]
-        },
-        "scroll-step": 5,
+        "format": "{volume}%",
+        "format-muted": "mute",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "pavucontrol"
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source":       "<span foreground='#c5c9c5'>󰍬</span>",
-        "format-source-muted": "<span foreground='#c4746e'>󰍭</span>",
+        "format-source":       "<span foreground='#c5c9c5' font='14px'>󰍬</span>",
+        "format-source-muted": "<span foreground='#c4746e' font='17px'>󰍭</span>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "tooltip": false
     },
 
-    /* ── центр ── */
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
         "sort-by-number": true
     },
 
-    /* ── справа ── */
     "network": {
         "interval": 5,
         "format-wifi":         "<span font='17px'>󰤨</span> {essid}",
@@ -81,6 +72,6 @@
     },
     "clock#date": {
         "format": "{:%a %d}",
-        "tooltip-format": "{:%B %Y}"
+        "tooltip-format": "{:%A, %d %B %Y}"
     }
 }
