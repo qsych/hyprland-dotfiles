@@ -7,8 +7,7 @@ hl.bind(mainMod .. "+ SHIFT + Q", hl.dsp.window.close() )
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm"))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("rofi -show drun"))
--- hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("rofi -show window"))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser"))
 
 hl.bind(mainMod .. " + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
@@ -70,7 +69,7 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized"}))
 
 -- Clipboard history
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("vicinae deeplink vicinae://launch/clipboard/history"))
 
 -- Hyprlock
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))

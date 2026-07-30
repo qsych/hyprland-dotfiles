@@ -1,0 +1,25 @@
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "font": {
+      "normal": {
+         "family": "Outfit"
+      }
+   },
+   "theme": {
+      "dark": {
+         "name": "vicinae-dark"
+      }
+   },
+   "launcher_window": {
+      "compact_mode": {
+         "enabled": false
+      }
+   },
+   "providers": {
+      "@dagimg-dot/store.vicinae.wifi-commander": {
+         "preferences": {
+            "network-cli-tool": "nmcli"
+         }
+      }
+   }
+}
