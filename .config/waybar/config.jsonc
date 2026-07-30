@@ -14,7 +14,7 @@
 
     "modules-left":   ["clock", "bluetooth", "pulseaudio", "pulseaudio#microphone"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right":  ["network", "tray", "cpu", "memory", "clock#date"],
+    "modules-right":  ["network", "battery", "tray", "cpu", "memory", "clock#date"],
 
     "clock": {
         "format": "{:%H:%M}",
@@ -56,6 +56,16 @@
         "format-disabled":     "<span font='17px'>󰀞</span>",
         "tooltip-format-wifi": "{essid} · {signalStrength}%",
         "on-click": "vicinae deeplink vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/manage-saved-networks"
+    },
+    "battery": {
+        "interval": 10,
+        "states": { "warning": 30, "critical": 15 },
+        "format": "<span font='15px'>{icon}</span> {capacity}%",
+        "format-charging": "<span font='16px'>󰂄</span> {capacity}%",
+        "format-plugged": "<span font='16px'>󰚥</span> {capacity}%",
+        "format-full": "<span font='15px'>󰁹</span> {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}% · {timeTo}"
     },
     "tray": { "icon-size": 14, "spacing": 8 },
 

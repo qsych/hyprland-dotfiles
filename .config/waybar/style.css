@@ -6,12 +6,19 @@
 @define-color bright #e6e6e6;
 @define-color dim   #625e5a;
 
-@define-color green #8a9a7b;
-@define-color ash   #8ea6a3;
-@define-color amber #c4b28a;
-@define-color red   #c4746e;
-@define-color red2  #9d5a54;
-@define-color ink   #12120f;
+@define-color green  #8a9a7b;
+@define-color green2 #87a987;
+@define-color blue   #8ba4b0;
+@define-color blue2  #7fb4ca;
+@define-color ash    #8ea4a2;
+@define-color gray   #a6a69c;
+@define-color gray2  #9e9b93;
+@define-color gray3  #7a8382;
+@define-color amber  #c4b28a;
+@define-color amber2 #e6c384;
+@define-color red    #c4746e;
+@define-color red2   #e46876;
+@define-color ink    #12120f;
 
 * {
     margin: 0;
@@ -41,7 +48,7 @@ window#waybar { background: transparent; }
     margin: 0 4px;
 }
 
-#clock, #date, #tray, #bluetooth, #network,
+#clock, #date, #tray, #bluetooth, #network, #battery,
 #pulseaudio, #microphone, #cpu, #memory {
     margin: 4px 3px;
     padding: 0 8px;
@@ -50,7 +57,7 @@ window#waybar { background: transparent; }
 }
 
 
-#bluetooth:hover, #network:hover, #pulseaudio:hover,
+#bluetooth:hover, #network:hover, #battery:hover, #pulseaudio:hover,
 #microphone:hover, #cpu:hover, #memory:hover {
     background: @bg0;
 }
@@ -101,20 +108,24 @@ window#waybar { background: transparent; }
 #bluetooth { color: @dim; }
 #bluetooth.on { color: @fg; }
 #bluetooth.connected {
-    background: @green;
-    color: @ink;
+    background: @gray3;
+    color: @bg0;
     font-weight: 700;
 }
-#bluetooth.connected:hover { background: #97a888; }
+#bluetooth.connected:hover { background: @gray2; }
 
 #network {
     color: @dim;
 }
 
 #network.wifi, #network.ethernet, #network.linked {
-    background: @ash; color: @ink; font-weight: 700;
+    background: @gray2;
+    color: @bg0;
+    font-weight: 700;
 }
-#network.wifi:hover { background: #9cb3b0; }
+#network.wifi:hover, #network.ethernet:hover, #network.linked:hover {
+    background: @gray;
+}
 #network.disconnected {
     background: @amber; color: @ink; font-weight: 700;
 }
@@ -125,6 +136,31 @@ window#waybar { background: transparent; }
     font-weight: 700;
     animation: alert 2.2s ease-in-out infinite;
 }
+
+#battery {
+    background: @green;
+    color: @ink;
+    font-weight: 700;
+}
+#battery:hover { background: @green2; }
+#battery.charging, #battery.plugged {
+    background: @blue;
+    color: @ink;
+}
+#battery.charging:hover, #battery.plugged:hover { background: @blue2; }
+#battery.full { background: @gray2; color: @bg0; }
+#battery.full:hover { background: @gray; }
+#battery.warning:not(.charging):not(.plugged) {
+    background: @amber;
+    color: @ink;
+}
+#battery.warning:not(.charging):not(.plugged):hover { background: @amber2; }
+#battery.critical:not(.charging):not(.plugged) {
+    background: @red;
+    color: @ink;
+    animation: alert 2.2s ease-in-out infinite;
+}
+#battery.critical:not(.charging):not(.plugged):hover { background: @red2; }
 
 @keyframes alert {
     from { background-color: @red; }
