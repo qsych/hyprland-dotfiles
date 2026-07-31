@@ -1,0 +1,4 @@
+/.config/vesktop/*
+!/.config/vesktop/settings.json
+!/.config/vesktop/settings/
+!/.config/vesktop/settings/**
