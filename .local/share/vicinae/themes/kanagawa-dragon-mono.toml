@@ -21,14 +21,14 @@ footer = { background = "colors.core.secondary_background" }
 border = "#282727"
 
 [colors.accents]
-blue = "#8ba4b0"
-green = "#8a9a7b"
-magenta = "#a292a3"
-orange = "#b6927b"
-purple = "#938aa9"
-red = "#c4746e"
-yellow = "#c4b28a"
-cyan = "#8ea4a2"
+blue = "#979c9f"
+green = "#979c96"
+magenta = "#9b989d"
+orange = "#9e9a95"
+purple = "#9998a0"
+red = "#a29592"
+yellow = "#a19e95"
+cyan = "#979d9c"
 
 [colors.shortcut]
 border = "colors.core.border"
@@ -53,16 +53,16 @@ border_error = "colors.accents.red"
 [colors.button.primary]
 background = "#282727"
 foreground = "colors.core.foreground"
-hover = { background = "#3a3939" }
+hover = { background = "#343333" }
 focus = { outline = "colors.core.accent" }
 
 [colors.list.item.hover]
-foreground = "#e6e6e6"
+foreground = "#dedede"
 secondary_foreground = "colors.core.foreground"
 
 [colors.list.item.selection]
 background = "#282727"
-foreground = "#e6e6e6"
+foreground = "#dedede"
 secondary_background = "#282727"
 secondary_foreground = "colors.core.foreground"
 
