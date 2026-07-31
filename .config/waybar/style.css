@@ -102,18 +102,6 @@ window#waybar { background: transparent; }
 
 #clock.date {
     letter-spacing: .16em;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-#clock.date {
-    margin-left: 0;
-    padding-left: 0;
-}
-
-#memory {
-    margin-right: 0;
-    padding-right: 0;
 }
 
 #tray > .passive { -gtk-icon-effect: dim; }
