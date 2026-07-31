@@ -35,6 +35,16 @@
          "preferences": {
             "network-cli-tool": "nmcli"
          }
+      },
+      "browser-extension": {
+         "entrypoints": {
+            "browse-tabs": {
+               "enabled": false
+            },
+            "shortcut-active-tab": {
+               "enabled": false
+            }
+         }
       }
    }
 }
