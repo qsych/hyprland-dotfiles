@@ -1,0 +1,79 @@
+[meta]
+version = 1
+name = "Kanagawa Dragon Mono"
+description = "Monochrome Kanagawa Dragon theme"
+variant = "dark"
+inherits = "vicinae-dark"
+
+[colors.core]
+background = "#181616"
+foreground = "#c5c9c5"
+secondary_background = "#12120f"
+border = "#282727"
+accent = "#a6a69c"
+accent_foreground = "#0d0c0c"
+
+[colors.main_window]
+border = "#282727"
+footer = { background = "colors.core.secondary_background" }
+
+[colors.settings_window]
+border = "#282727"
+
+[colors.accents]
+blue = "#8ba4b0"
+green = "#8a9a7b"
+magenta = "#a292a3"
+orange = "#b6927b"
+purple = "#938aa9"
+red = "#c4746e"
+yellow = "#c4b28a"
+cyan = "#8ea4a2"
+
+[colors.shortcut]
+border = "colors.core.border"
+
+[colors.text]
+default = "colors.core.foreground"
+muted = "#a6a69c"
+danger = "colors.accents.red"
+success = "colors.accents.green"
+placeholder = "#625e5a"
+selection = { background = "colors.core.foreground", foreground = "colors.core.accent_foreground" }
+
+[colors.text.links]
+default = "colors.accents.blue"
+visited = "colors.accents.magenta"
+
+[colors.input]
+border = "colors.core.border"
+border_focus = "colors.core.accent"
+border_error = "colors.accents.red"
+
+[colors.button.primary]
+background = "#282727"
+foreground = "colors.core.foreground"
+hover = { background = "#3a3939" }
+focus = { outline = "colors.core.accent" }
+
+[colors.list.item.hover]
+foreground = "#e6e6e6"
+secondary_foreground = "colors.core.foreground"
+
+[colors.list.item.selection]
+background = "#282727"
+foreground = "#e6e6e6"
+secondary_background = "#282727"
+secondary_foreground = "colors.core.foreground"
+
+[colors.grid.item]
+background = "colors.core.secondary_background"
+hover = { outline = "colors.core.accent" }
+selection = { outline = "colors.core.foreground" }
+
+[colors.scrollbars]
+background = "#282727"
+
+[colors.loading]
+bar = "colors.core.accent"
+spinner = "colors.core.foreground"
