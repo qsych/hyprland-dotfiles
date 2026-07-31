@@ -1,7 +1,7 @@
 local artWidth = 12
 local maxHeight = 17
-local colorMode = 1-- 1: "words"; 2: "symbols"
-local word = " arch "
+local colorMode = 2     -- 1: "words"; 2: "symbols"
+local word = "!@#$%^&*()>~?<|'"
 
 return function(user)
     -- Previous Fastfetch modules populate these globals before this renderer runs.
