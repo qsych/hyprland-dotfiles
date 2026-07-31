@@ -48,7 +48,7 @@ window#waybar { background: transparent; }
     margin: 0 4px;
 }
 
-#clock, #date, #tray, #bluetooth, #network, #battery,
+#clock, #date, #tray, #bluetooth, #network, #battery, #language,
 #pulseaudio, #microphone, #cpu, #memory {
     margin: 4px 3px;
     padding: 0 8px;
@@ -57,7 +57,7 @@ window#waybar { background: transparent; }
 }
 
 
-#bluetooth:hover, #network:hover, #battery:hover, #pulseaudio:hover,
+#bluetooth:hover, #network:hover, #battery:hover, #language:hover, #pulseaudio:hover,
 #microphone:hover, #cpu:hover, #memory:hover {
     background: @bg0;
 }
@@ -161,6 +161,16 @@ window#waybar { background: transparent; }
     animation: alert 2.2s ease-in-out infinite;
 }
 #battery.critical:not(.charging):not(.plugged):hover { background: @red2; }
+
+#language {
+    background: @line;
+    color: @gray;
+    font-weight: 700;
+}
+#language:hover {
+    background: @line;
+    color: @bright;
+}
 
 @keyframes alert {
     from { background-color: @red; }
