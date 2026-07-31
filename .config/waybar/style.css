@@ -35,14 +35,16 @@ window#waybar { background: transparent; }
 
 .modules-left,
 .modules-right {
-    background: @bg1;
+    background: alpha(@bg1, 0.74);
+    border: 1px solid alpha(@line, 0.78);
     border-radius: 6px;
     padding: 0 8px;
     margin: 0 8px;
 }
 
 .modules-center {
-    background: @bg2;
+    background: alpha(@bg2, 0.68);
+    border: 1px solid alpha(@line, 0.74);
     border-radius: 6px;
     padding: 0 6px;
     margin: 0 4px;
@@ -100,6 +102,18 @@ window#waybar { background: transparent; }
 
 #clock.date {
     letter-spacing: .16em;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#clock.date {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#memory {
+    margin-right: 0;
+    padding-right: 0;
 }
 
 #tray > .passive { -gtk-icon-effect: dim; }

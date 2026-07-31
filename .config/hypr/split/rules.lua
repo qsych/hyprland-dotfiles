@@ -11,6 +11,13 @@ hl.layer_rule({
     ignore_alpha = 0,
 })
 
+hl.layer_rule({
+    match = { namespace = "^waybar$" },
+    name = "waybar-blur",
+    blur = true,
+    ignore_alpha = 0,
+})
+
 
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/

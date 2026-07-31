@@ -14,11 +14,19 @@
 
     "modules-left":   ["clock", "hyprland/language", "bluetooth", "pulseaudio", "pulseaudio#microphone"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right":  ["network", "battery", "tray", "cpu", "memory", "clock#date"],
+    "modules-right":  ["network", "battery", "cpu", "memory", "tray", "clock#date"],
 
     "clock": {
         "format": "{:%H:%M}",
         "tooltip-format": "{:%A, %d %B %Y}"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-ru": "RU",
+        "keyboard-name": "at-translated-set-2-keyboard",
+        "on-click": "hyprctl switchxkblayout all next",
+        "tooltip": false
     },
     "bluetooth": {
         "format-off":      "󰂲",
@@ -66,14 +74,6 @@
         "format-full": "<span font='15px'>󰁹</span> {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "{capacity}% · {timeTo}"
-    },
-    "hyprland/language": {
-        "format": "{}",
-        "format-en": "US",
-        "format-ru": "RU",
-        "keyboard-name": "at-translated-set-2-keyboard",
-        "on-click": "hyprctl switchxkblayout all next",
-        "tooltip": false
     },
     "tray": { "icon-size": 14, "spacing": 8 },
 
