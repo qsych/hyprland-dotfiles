@@ -1,0 +1,54 @@
+# subvolume to snapshot
+SUBVOLUME="/"
+
+# filesystem type
+FSTYPE="btrfs"
+
+# btrfs qgroup for space aware cleanup algorithms
+QGROUP=""
+
+# limits
+SPACE_LIMIT="0.5"
+FREE_LIMIT="0.2"
+
+# permissions
+ALLOW_USERS=""
+ALLOW_GROUPS="wheel"
+SYNC_ACL="no"
+
+# compare pre/post snapshots
+BACKGROUND_COMPARISON="yes"
+
+####################################
+# snap-pac / pacman snapshots
+####################################
+
+NUMBER_CLEANUP="yes"
+
+NUMBER_MIN_AGE="3600"
+
+NUMBER_LIMIT="8"
+NUMBER_LIMIT_IMPORTANT="5"
+
+####################################
+# Timeline
+####################################
+
+TIMELINE_CREATE="no"
+TIMELINE_CLEANUP="no"
+
+TIMELINE_MIN_AGE="3600"
+
+TIMELINE_LIMIT_HOURLY="0"
+TIMELINE_LIMIT_DAILY="0"
+TIMELINE_LIMIT_WEEKLY="0"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_QUARTERLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+
+####################################
+# Cleanup
+####################################
+
+EMPTY_PRE_POST_CLEANUP="yes"
+EMPTY_PRE_POST_MIN_AGE="3600"
