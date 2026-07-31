@@ -1,8 +1,10 @@
+64gram-desktop-bin
 7zip
 amd-ucode
 awww
 base
 base-devel
+bibata-cursor-git
 bluez
 bluez-utils
 brightnessctl
@@ -14,8 +16,11 @@ eza
 fastfetch
 fish
 fzf
+gdu
 git
+grimblast-git
 gst-plugin-pipewire
+helium-browser-bin
 hypridle
 hyprland
 hyprland-qt-support
@@ -28,6 +33,7 @@ limine
 linux
 linux-firmware
 lvm2
+lynis
 man-db
 mkinitcpio
 nano
@@ -35,6 +41,8 @@ networkmanager
 noto-fonts
 obs-studio
 openssh
+paru
+paru-debug
 pcmanfm
 pipewire
 pipewire-alsa
@@ -43,9 +51,13 @@ pipewire-pulse
 power-profiles-daemon
 reflector
 ripgrep
+rkhunter
 satty
+snap-pac
 snapper
 sof-firmware
+spicetify-cli
+spotify
 sudo
 ttf-dejavu
 ttf-jetbrains-mono
@@ -53,6 +65,8 @@ ttf-jetbrains-mono-nerd
 ttf-liberation
 ufw
 uwsm
+vesktop-bin
+vicinae-bin
 waybar
 wireplumber
 wpa_supplicant
