@@ -2,7 +2,7 @@
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + CTRL + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. "+ SHIFT + Q", hl.dsp.window.close() )
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty"))
@@ -36,7 +36,7 @@ end
 -- Special workspace (scratchpad)
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("scratchpad"))
 hl.bind(mainMod .. " + ALT + Tab", hl.dsp.window.move({ workspace = "special:scratchpad" }))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "e+0" }))
+hl.bind(mainMod .. " + CTRL + S", hl.dsp.window.move({ workspace = "e+0" }))
 
 -- Move/resize
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
@@ -58,6 +58,7 @@ hl.bind(mainMod .. " + CTRL + bracketright",  hl.dsp.exec_cmd("playerctl previou
 -- Screnshots
 local screen_path = "~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
 hl.bind("Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast --freeze copysave area " .. screen_path))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast --freeze copysave area " .. screen_path))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast copysave screen " .. screen_path))
 hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd("satty --filename $(ls -t ~/Pictures/Screenshots/*.png | head -n1)"))
 
@@ -70,6 +71,9 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized"}))
 
 -- Clipboard history
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("vicinae deeplink vicinae://launch/clipboard/history"))
+
+-- Notifications
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 
 -- Hyprlock
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
