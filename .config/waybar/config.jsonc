@@ -39,8 +39,7 @@
     "pulseaudio": {
         "format": "{volume}%",
         "format-muted": "mute",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-middle": "pavucontrol"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
