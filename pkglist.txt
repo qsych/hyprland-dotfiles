@@ -1,5 +1,6 @@
 64gram-desktop-bin
 7zip
+aider-chat-venv
 amd-ucode
 awww
 base
@@ -15,6 +16,7 @@ efibootmgr
 eza
 fastfetch
 fish
+fuse2
 fzf
 gdu
 git
@@ -32,6 +34,7 @@ libpulse
 limine
 linux
 linux-firmware
+llama-cpp
 lvm2
 lynis
 man-db
@@ -40,7 +43,10 @@ nano
 networkmanager
 noto-fonts
 obs-studio
+ollama
+opencode
 openssh
+open-webui
 paru
 paru-debug
 pcmanfm
@@ -57,6 +63,7 @@ snap-pac
 snapper
 sof-firmware
 spicetify-cli
+spirv-headers
 spotify
 sudo
 ttf-dejavu
@@ -64,9 +71,11 @@ ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ufw
+unzip
 uwsm
 vesktop-bin
 vicinae-bin
+vulkan-headers
 waybar
 wireplumber
 wpa_supplicant
