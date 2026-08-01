@@ -36,7 +36,6 @@ linux
 linux-firmware
 llama-cpp
 lvm2
-lynis
 man-db
 mkinitcpio
 nano
@@ -48,7 +47,6 @@ opencode
 openssh
 open-webui
 paru
-paru-debug
 pcmanfm
 pipewire
 pipewire-alsa
@@ -57,13 +55,11 @@ pipewire-pulse
 power-profiles-daemon
 reflector
 ripgrep
-rkhunter
 satty
 snap-pac
 snapper
 sof-firmware
 spicetify-cli
-spirv-headers
 spotify
 sudo
 ttf-dejavu
@@ -75,7 +71,6 @@ unzip
 uwsm
 vesktop-bin
 vicinae-bin
-vulkan-headers
 waybar
 wireplumber
 wpa_supplicant
