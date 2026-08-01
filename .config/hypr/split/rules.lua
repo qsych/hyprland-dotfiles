@@ -18,6 +18,20 @@ hl.layer_rule({
     ignore_alpha = 0,
 })
 
+hl.layer_rule({
+    match = { namespace = "^swaync-control-center$" },
+    name = "swaync-cc-blur",
+    blur = true,
+    ignore_alpha = 0,
+})
+
+hl.layer_rule({
+    match = { namespace = "^swaync-notification-window$" },
+    name = "swaync-notif-blur",
+    blur = true,
+    ignore_alpha = 0,
+})
+
 
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/

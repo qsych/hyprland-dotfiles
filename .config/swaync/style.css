@@ -1,0 +1,219 @@
+@define-color bg0    #0d0c0c;
+@define-color bg1    #12120f;
+@define-color bg2    #181616;
+@define-color bg3    #221f1f;
+@define-color line   #282727;
+@define-color line2  #373433;
+@define-color fg     #c5c9c5;
+@define-color bright #e6e6e6;
+@define-color dim    #625e5a;
+@define-color red    #c4746e;
+
+* {
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 12px;
+    color: @fg;
+}
+
+/* ---------- Notification cards ---------- */
+
+.notification-row {
+    outline: none;
+    margin: 3px 8px;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: transparent;
+}
+
+.notification {
+    background: alpha(@bg2, 0.8);
+    border: 1px solid @line;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 1px 0;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 6px 8px;
+}
+
+.notification-default-action {
+    border-radius: 8px;
+}
+
+.notification-default-action:hover,
+.notification-default-action:focus {
+    background: @bg3;
+}
+
+.notification-image {
+    border-radius: 6px;
+    background: @bg3;
+}
+
+.title {
+    color: @bright;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.summary {
+    color: @fg;
+}
+
+.body {
+    color: @dim;
+    font-size: 11px;
+    padding-top: 2px;
+}
+
+.notification-action-buttons {
+    margin: 1px 5px 3px;
+}
+
+.notification-action {
+    background: @bg1;
+    border: 1px solid @line;
+    border-radius: 6px;
+    color: @fg;
+    padding: 2px 8px;
+}
+
+.notification-action:hover,
+.notification-action:focus {
+    background: @bg3;
+    border-color: @line2;
+    color: @bright;
+}
+
+.close-button {
+    background: transparent;
+    color: @dim;
+    border-radius: 6px;
+    margin: 2px;
+    font-size: 11px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    background: alpha(@red, 0.12);
+    color: @red;
+}
+
+/* ---------- Groups ---------- */
+
+.notification-group {
+    background: transparent;
+    border: 1px solid @line;
+    border-radius: 10px;
+    margin: 1px 0;
+}
+
+.notification-group-headers {
+    color: @dim;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 8px;
+    padding: 6px 8px 2px;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    background: transparent;
+    border-radius: 6px;
+    color: @dim;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+    background: @bg3;
+    color: @fg;
+}
+
+.notification-group-container .notification-row {
+    margin: 0 8px;
+}
+
+.notification-group-container .notification {
+    background: transparent;
+    border: none;
+    border-top: 1px solid alpha(@line, 0.6);
+    border-radius: 0;
+    margin: 0;
+    padding: 2px 0;
+}
+
+.notification-group-container .notification-row:first-child .notification {
+    border-top: none;
+}
+
+.notification-group-container .notification-row:last-child .notification {
+    border-radius: 0 0 8px 8px;
+}
+
+/* ---------- Popup ---------- */
+
+.floating-notifications .notification {
+    background: alpha(@bg1, 0.9);
+    border: 1px solid @line2;
+}
+
+.floating-notifications .notification:hover {
+    background: @bg2;
+}
+
+/* ---------- Control center ---------- */
+
+.control-center {
+    background: alpha(@bg1, 0.88);
+    border: 1px solid @line2;
+    border-radius: 14px;
+    padding: 8px;
+}
+
+.control-center-list {
+    background: transparent;
+    border-radius: 8px;
+}
+
+.control-center-list .notification {
+    background: alpha(@bg2, 0.75);
+}
+
+.control-center-list .notification:hover {
+    background: @bg3;
+}
+
+.control-center-list-placeholder {
+    color: @dim;
+    font-size: 11px;
+}
+
+/* ---------- Title bar ---------- */
+
+.control-center .widget-title {
+    color: @bright;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 4px 8px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid @line;
+}
+
+.control-center .widget-title > button {
+    background: transparent;
+    border: 1px solid @line;
+    border-radius: 6px;
+    color: @dim;
+    font-size: 11px;
+    padding: 1px 8px;
+}
+
+.control-center .widget-title > button:hover {
+    background: @bg3;
+    border-color: @line2;
+    color: @bright;
+}
