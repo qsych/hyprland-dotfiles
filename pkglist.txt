@@ -80,6 +80,7 @@ ttf-liberation
 ttf-udev-gothic
 ufw
 unzip
+uv
 uwsm
 vesktop-bin
 vicinae-bin
