@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+region="$(slurp)"
+[ -z "$region" ] && exit 1
+
+dir="$(mktemp -d)"
+crop="$dir/lens.jpg"
+html="$dir/lens.html"
+
+grim -g "$region" - | magick - -resize '1000x1000>' -strip -quality 85 "$crop"
+
+b64="$(base64 -w0 "$crop" 2>/dev/null || base64 -b0 "$crop")"
+
+cat > "$html" <<EOF
+<html><body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#111;color:#fff;font-family:system-ui"><p>Searching with Google Lens…</p><form id="f" method="POST" enctype="multipart/form-data" action="https://lens.google.com/v3/upload"></form><script>
+var b=atob('$b64');
+var a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);var d=new DataTransfer();d.items.add(new File([a],"i.jpg",{type:"image/jpeg"}));var inp=document.createElement("input");inp.type="file";inp.name="encoded_image";inp.files=d.files;document.getElementById("f").appendChild(inp);document.getElementById("f").submit();
+</script></body></html>
+EOF
+
+xdg-open "$html" >/dev/null 2>&1 &
+
+( sleep 20 && rm -rf "$dir" ) &

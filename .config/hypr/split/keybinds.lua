@@ -55,12 +55,12 @@ hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("playerctl play-pause"), { loc
 hl.bind(mainMod .. " + CTRL + bracketleft",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind(mainMod .. " + CTRL + bracketright",  hl.dsp.exec_cmd("playerctl previous"),       { locked = true })
 
--- Screnshots
+-- Screenshots
 local screen_path = "~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
-hl.bind("Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast --freeze copysave area " .. screen_path))
+hl.bind("Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast --freeze copysave screen " .. screen_path))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast --freeze copysave area " .. screen_path))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("mkdir -p ~/Pictures/Screenshots && grimblast copysave screen " .. screen_path))
-hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd("satty --filename $(ls -t ~/Pictures/Screenshots/*.png | head -n1)"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("satty --filename $(ls -t ~/Pictures/Screenshots/*.png | head -n1)"))
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.local/bin/lens")) -- Google Lens on selected region
 
 -- Color Picker
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
