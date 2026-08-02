@@ -14,6 +14,7 @@ cliphist
 efibootmgr
 eza
 fastfetch
+fd
 fish
 fzf
 gdu
@@ -30,6 +31,7 @@ hyprpicker
 hyprpolkitagent
 hyprshutdown
 kitty
+lazygit
 libnotify
 libpulse
 libva-utils
@@ -40,8 +42,8 @@ lvm2
 lynis
 man-db
 mesa-utils
+micro
 mkinitcpio
-nano
 networkmanager
 noto-fonts
 noto-fonts-emoji
